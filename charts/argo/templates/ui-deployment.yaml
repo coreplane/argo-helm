@@ -24,7 +24,7 @@ spec:
           - name: IN_CLUSTER
             value: "true"
           - name: ENABLE_WEB_CONSOLE
-            value: {{ .Values.ui.enableWebConsole }}
+            value: {{ .Values.ui.enableWebConsole | quote }}
           - name: ARGO_NAMESPACE
             valueFrom:
               fieldRef:

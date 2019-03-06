@@ -1,8 +1,4 @@
-# These ClusterRoles add corresponding privileges on Workflow
-# resources to generic Kubernetes admin/edit/view cluster roles.
-
 {{- if .Values.rbacCreateAggregateClusterRoles -}}
-
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -24,7 +20,9 @@ rules:
   - patch
   - update
   - watch
+{{- end -}}
 ---
+{{- if .Values.rbacCreateAggregateClusterRoles -}}
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -46,7 +44,9 @@ rules:
   - patch
   - update
   - watch
+{{- end -}}
 ---
+{{- if .Values.rbacCreateAggregateClusterRoles -}}
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -63,5 +63,4 @@ rules:
   - get
   - list
   - watch
-
 {{- end -}}
