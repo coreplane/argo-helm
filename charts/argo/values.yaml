@@ -45,6 +45,8 @@ ui:
   serviceAccount: argo-ui
   # Annotations to be applied to the UI Service
   serviceAnnotations: {}
+
+  enableWebConsole: "true"
   
   ## Ingress configuration.
   ## ref: https://kubernetes.io/docs/user-guide/ingress/
