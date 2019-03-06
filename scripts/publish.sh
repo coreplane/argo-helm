@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SRCROOT="$(cd "$(dirname "$0")/.." && pwd)"
+SRCROOT="$(cd "$(dirname "$0")/.." > /dev/null && pwd)"
 
 rm -rf $SRCROOT/output && git clone -b gh-pages git@github.com:coreplane/argo-helm.git $SRCROOT/output
 
