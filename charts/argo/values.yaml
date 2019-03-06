@@ -37,6 +37,11 @@ ui:
   name: ui
   serviceType: ClusterIP
   servicePort: 80
+
+  # these options are available when serviceType is `LoadBalancer`:
+  # serviceLoadBalancerIP:
+  serviceLoadBalancerSourceRanges: []
+
   serviceAccount: argo-ui
   # Annotations to be applied to the UI Service
   serviceAnnotations: {}

@@ -10,6 +10,15 @@ metadata:
   annotations:
 {{ toYaml .Values.ui.serviceAnnotations | indent 4}}{{- end }}
 spec:
+  {{- if eq .Values.ui.serviceType "LoadBalancer" }}
+  {{- if .Values.ui.serviceLoadBalancerIP }}
+  loadBalancerIP: {{ .Values.ui.serviceLoadBalancerIP }}
+  {{- end }}
+  loadBalancerSourceRanges:
+    {{- range .Values.ui.serviceloadBalancerSourceRanges }}
+    - {{ . }}
+    {{- end }}
+  {{- end }}
   ports:
   - port: {{ .Values.ui.servicePort }}
     protocol: TCP
