@@ -13,6 +13,11 @@ crdVersion: v1alpha1
 
 rbacCreateAggregateClusterRoles: false
 
+# If non-empty, we will create a service account with this name for
+# use by workflows, and attach a minimal role to it.
+
+rbacWorkerServiceAccount: ""
+
 init:
   # By default the installation will not set an explicit one, which will mean it uses `default` for the namespace the chart is
   # being deployed to.  In RBAC clusters, that will almost certainly fail.  See the NOTES: section of the readme for more info.
